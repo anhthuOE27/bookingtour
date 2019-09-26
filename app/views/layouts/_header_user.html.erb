@@ -6,6 +6,7 @@
           <li><%= link_to t(".home"), root_path %></li>
           <li><%= link_to t(".profile"), current_user %></li>
           <li><%= link_to t(".editpr"), edit_user_path %></li>
+          <li><%= link_to t(".mybooking"), user_bookingtour_path(current_user) %></li>
         </ul>
         <div class="card hovercard">
           <div class="cardheader">

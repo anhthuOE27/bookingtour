@@ -1,0 +1,13 @@
+<div class="panel panel-default panel-google-plus">
+  <div class="panel-heading">
+    <img class="img-circle pull-left" src="https://public.slidesharecdn.com/images/user-48x48.png" alt="Mouse0270" />
+    <h3><%= booking_tour.tour_name %></h3>
+    <h5><span><%= time_ago_in_words(booking_tour.created_at) %></span></h5>
+  </div>
+  <div class="panel-footer">
+    <% if current_user? booking_tour.user %>
+      <%= link_to t(".delete"), user_bookingtour_url(bookingtour_id: booking_tour.id), method: :DELETE,
+        data: { confirm: t(".confirm") } %>
+    <% end %>
+  </div>
+</div>

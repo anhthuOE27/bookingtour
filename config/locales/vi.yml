@@ -62,6 +62,9 @@ vi:
       startdate: "Ngày bắt đầu: "
       book: "Đặt"
       amountpeople: "Số người: "
+    bookingtour:
+      delete: "Xóa"
+      confirm: "Bạn chắc chứ? "
   controllers:
     signup:
       success: "Đăng ký thành công"
@@ -88,8 +91,20 @@ vi:
       create:
         success: "Đặt tour thành công"
         danger: "Đặt tour thất bại"
+      show: 
+        danger: "Người dùng không tồn tại"
       load_tour:
         danger: "Tour không tồn tại"
+      destroy: 
+        success: "Xóa thành công"
+        danger: "Xóa thất bại"
+        warn: "Không xóa được"
+      load_booking:
+        danger: "Booking Tour không tồn tại"
+      correct_user_for_booking:
+        d: "Người dùng không tồn tại"
+      check_tour_full?:
+        danger: "Tour đã đầy"
   sessions:
     new:
       rememberme: "Nhớ tôi?"
@@ -126,6 +141,7 @@ vi:
       home: "Trang Chủ"
       profile: "Trang cá nhân"
       editpr: "Chỉnh sửa thông tin cá nhân"
+      mybooking: "My Booking"
   shared:
     error_messages:
       youhave: "Bạn có %{error} lỗi"

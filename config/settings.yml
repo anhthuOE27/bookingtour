@@ -15,4 +15,4 @@ rows: 10
 accept_image: "image/jpeg,image/gif,image/png"
 review:
   length: 9999
-
+full: 0

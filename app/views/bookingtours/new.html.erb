@@ -15,7 +15,7 @@
 
     <p><%= t ".price" %><%= number_to_currency(@tour.price) %></p>
 
-    <p><%= t ".startdate" %><%= @tour.startdate.strftime("%d-%m-%Y") %> </p>
+    <p><%= t ".startdate" %><%= l @tour.startdate, format: :default %> </p>
 
     <%= f.label t ".amountpeople" %>
     <%= f.text_field :amountpeople, class: "form-control" %>

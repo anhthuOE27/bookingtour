@@ -57,20 +57,5 @@ class UsersController < ApplicationController
     flash[:danger] = t "controllers.users.danger"
     redirect_to login_url
   end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "controllers.users.danger"
-    redirect_to login_url
-  end
-
-  def resolve_layout
-    case action_name
-    when "new", "create"
-      "login"
-    else
-      "signup"
-    end
-  end
 end
+

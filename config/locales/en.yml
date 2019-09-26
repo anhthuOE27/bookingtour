@@ -73,8 +73,20 @@ en:
       create:
         success: "Booking success"
         danger: "Booking fail"
+      show: 
+        danger: "User not exist"
       load_tour:
         danger: "Tour not exist"
+      destroy: 
+        success: "Delete booking success"
+        danger: "Delete fail"
+        warn: "Don't Delete"
+      load_booking:
+        danger: "Booking Tour not exist"
+      correct_user_for_booking:
+        d: "User not exist"
+      check_tour_full?:
+        danger: "Tour Full"
   sessions:
     new:
       rememberme: "Remember me?"
@@ -106,6 +118,7 @@ en:
       home: "Home"
       profile: "Profile"
       editpr: "Edit Profile"
+      mybooking: "My Booking"
   shared:
     error_messages:
       youhave: "You have %{error} error"
@@ -126,6 +139,9 @@ en:
       startdate: "Start date: "
       book: "Book"
       amountpeople: "Amount People: "
+    booking_tour:
+      delete: "Delete"
+      confirm: "Are you sure? "
   users:
     new:
       signup: "Sign Up"
@@ -149,3 +165,6 @@ en:
       address: "Address"
       password: "Password"
       password_cofirmation: "Password Confirmation"
+  time: 
+    formats:
+      default: "%d-%m-%Y"

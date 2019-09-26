@@ -12,4 +12,13 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  def resolve_layout
+    case action_name
+    when "new", "create"
+      "login"
+    else
+      "signup"
+    end
+  end
 end
