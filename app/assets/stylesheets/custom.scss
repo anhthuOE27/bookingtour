@@ -8,6 +8,8 @@ $d10px: 10px;
 $d20px: 20px;
 $light-gray: #777;
 $d30px: 30px;
+$bgcmt: #f7f7f7;
+$colorbtn: #3578E5;
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
@@ -94,4 +96,89 @@ input {
 .glyphicon.glyphicon-edit {
   margin-left: $d30px;
   font-size: 1.5em;
+}
+
+.introduction_tour {
+  margin-top: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+
+  p {
+
+    a {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+  }
+}
+
+.image_tour {
+  position: relative;
+  padding-left: 20%;
+  padding-right: 20%;
+
+  img {
+    width: 100%;
+    top: 100px;
+  }
+}
+
+.comment_of_tour {
+  padding :20%;
+
+  .tilte_comment {
+    p {
+      text-align: center;
+    }
+  }
+
+  .comment_oneline {
+    margin-top: 10%;
+    border-top: 1px solid $light-gray;
+    background: $bgcmt;
+
+    p {
+      margin: 1%;
+    }
+  }
+
+  .rep_comment {
+    background: $bgcmt;
+    border-radius: 28px;
+    margin-left: 5%;
+    a, p {
+      margin-left: 2%;
+    }
+  }
+
+  .form_rep_comment {
+    margin-left: 5%;
+    input {
+      float: left;
+      margin-left: 2%;
+      margin-bottom: 0px;
+    }
+
+    button {
+      padding-left: 2%;
+      padding-right: 2%;
+      float: left;
+      margin-left: 2%;
+      background: $colorbtn;
+    }
+
+    .button_reply_comment {
+      border: 1px solid $light-gray;
+      border-radius: 25px;
+    }
+
+    .content_form_rep{
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

@@ -23,6 +23,9 @@ class UsersController < ApplicationController
   def show
     @reviews = @user.reviews.paginate page: params[:page],
       per_page: Settings.user.length.per_page
+    return if @reviews
+    flash[:danger] = t "controllers.reviews.notfound"
+    redirect_to root_path
   end
 
   def edit; end

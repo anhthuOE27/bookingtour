@@ -1,0 +1,17 @@
+<% unless comment.parent_comment %>
+  <div class="comment_oneline">
+    <p><%= link_to comment.user.fullname, comment.user %></p>
+    <p><%= comment.content %></p>
+  </div> <!-- end comment-oneline -->
+  <%= render partial: "comments/rep_comment", collection: comment.comments %>
+  <div class="form_rep_comment">
+    <%= form_for(:comment, url: comment_comments_path(comment,
+      tour_id: @tours.id)) do |f| %>
+      <div class="content_form_rep">
+        <%= f.text_field :content, placeholder: "#{t ".reply"}",
+          class: "form-control, input100" %>
+        <button class="button_reply_comment"><%= t ".reply" %></button>
+      </div>
+    <% end %>
+  </div> <!-- end form rep comment -->
+<% end %>

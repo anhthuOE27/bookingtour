@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_09_30_035401) do
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tour_id"
     t.integer "user_id"
-    t.string "content"
+    t.text "content"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

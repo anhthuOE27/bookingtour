@@ -51,8 +51,14 @@ vi:
     tour:
       review: "Review"
       booking: "Đặt"
+    show:
+      comment: "Comment"
+      price: "Giá:"
+      food: "1. Những món ăn đặc sắc:"
+      place: "2. Khu vực nghỉ dưỡng:"
+      image: "3. Một vài hình ảnh giới thiệu:"
   bookingtours:
-    new: 
+    new:
       confirm: "Bạn chắc chứ?"
       fullname: "Họ Tên"
       phone: "Điện Thoại"
@@ -78,7 +84,7 @@ vi:
         fail: "Tạo review thất bại"
       load_tour:
         danger: "Tour không tồn tại"
-      destroy: 
+      destroy:
         success: "Xoá thành công"
     sessions:
       danger: "Email/Password không đúng!"
@@ -147,6 +153,9 @@ vi:
       youhave: "Bạn có %{error} lỗi"
     item_tours:
       review: "Review"
+  comments:
+    comment:
+      reply: "Trả lời bình luận"
   users:
     new:
       signup: "Đăng ký"

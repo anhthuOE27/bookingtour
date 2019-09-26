@@ -11,6 +11,8 @@ end
   finishdate = 30.days.from_now
   amountpeople = 10
   category = categorys[0..3]
+  foods = "sầu riêng"
+  places = "Nghỉ ở nghìn chín, đi tham quan cù lao chàm"
   category.each { |item|
   Tour.create!(
     name: "#{name} #{item.name}",
@@ -19,6 +21,8 @@ end
     startdate: startdate,
     finishdate: finishdate,
     amountpeople: amountpeople
+    food: foods,
+    place: places
   )
   }
 end

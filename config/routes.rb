@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/create'
   root "static_pages#home"
 
   get "/help", to: "static_pages#help"
@@ -17,5 +18,9 @@ Rails.application.routes.draw do
   resources :tours, only: [:index, :show] do
     resources :reviews, only: [:new, :show, :create]
     resources :bookingtours, only: [:create, :new]
+    resources :comments, only: :create
+  end
+  resources :comments, only: :create do
+    resources :comments, only: :create
   end
 end

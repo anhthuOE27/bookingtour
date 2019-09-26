@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="introduction_tour">
+    <p>
+      <%= link_to @tours.name %>
+    </p>
+    <p>
+      <%= link_to t ".price"%>
+      <%= number_to_currency(@tours.price) %>
+    </p>
+    <p>
+      <%= link_to t ".food"%>
+    </p>
+    <p><%= @tours.food %></p>
+    <p>
+      <%= link_to t ".place" %>
+    </p>
+    <p><%= @tours.place %></p>
+    <p><%= link_to t ".image" %></p>
+  </div>
+  <div class="image_tour">
+    <%= link_to image_tag("https://c8.alamy.com/comp/F1WJN3/full-moon-harvest-moon-large-file-size-F1WJN3.jpg") %>
+  </div>
+</div>
+<div class="row">
+  <div class="comment_of_tour">
+    <div class="tilte_comment">
+      <p><%= t ".comment" %></p>
+    </div>
+    <%= form_for(:comment, url: tour_comments_url(@tours)) do |f| %>
+      <%= f.text_area :content, cols: 10, rows: 5,
+        placeholder: "#{t ".comment"}", class: "form-control, input100" %>
+      <button class="button_show"><%= t ".comment" %></button>
+    <% end %>
+    <%= render partial: "comments/comment", collection: @comments %>
+  </div>
+</div>

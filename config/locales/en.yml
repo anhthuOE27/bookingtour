@@ -60,7 +60,7 @@ en:
         fail: "Create review fail"
       load_tour:
         danger: "Tour not exits"
-      destroy: 
+      destroy:
         success: "Delete success"
     sessions:
       danger: "Invalid email/password combination"
@@ -124,12 +124,21 @@ en:
       youhave: "You have %{error} error"
     item_tours:
       review: "Review"
+  comments:
+    comment:
+      reply: "Reply"
   tours:
     tour:
       review: "Review"
       booking: "Booking"
+    show:
+      comment: "Comment"
+      price: "Price:"
+      food: "1. Dish:"
+      place: "2. A place for relax:"
+      image: "3. Picture introducion:"
   bookingtours:
-    new: 
+    new:
       confirm: "You sure?"
       fullname: "FullName"
       phone: "Phone"
