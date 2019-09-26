@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   before_action :correct_user_for_review, only: :destroy
 
   def show
+    @review = Review.find_by id: params[:id]
     return if @review
     flash[:danger] = t "controllers.reviews.show.danger"
     redirect_to root_path

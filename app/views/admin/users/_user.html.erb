@@ -1,0 +1,24 @@
+<tr class = "row_user">
+  <td><%= link_to user.id, user %></td>
+  <td><%= user.fullname %></td>
+  <td><%= user.email %></td>
+  <td><%= user.address %></td>
+  <td><%= user.phone %></td>
+  <td>
+    <select name="category[price_max]" id="number_role" data-id = <%= user.id %>>
+      <option value=<%= user.role %>>
+        <% if user.role == 1 %>
+          Admin
+        <% else %>
+          User
+        <% end %>
+      </option>
+      <%= render partial: 'admin/users/role', collection: @roles %>
+    </select>
+  </td>
+  <td>
+    <%= form_for(:user, url: admin_user_path(user), method: :delete) do |f| %>
+      <%= f.submit "DELETE", :onclick => "alert('Input collected!')" %>
+    <% end %>
+  </td>
+</tr>

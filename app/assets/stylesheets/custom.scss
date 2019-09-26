@@ -18,7 +18,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -33,7 +32,6 @@ h2 {
 }
 
 p {
-  font-size: 1.5em;
   line-height: 1.7em;
 }
 
@@ -57,13 +55,9 @@ p {
 input, textarea, select, .uneditable-input {
   border: 1px solid $none_gray;
   width: 100%;
-  margin-bottom: 15px;
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
-}
 #error_explanation {
   color: $red;
   ul {
@@ -80,7 +74,6 @@ input {
 }
 
 .checkbox {
-  margin-top: $am10px;
   margin-bottom: $d10px;
   span {
     margin-left: $d20px;

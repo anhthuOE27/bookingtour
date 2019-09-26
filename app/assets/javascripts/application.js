@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery-ui/widgets/datepicker
 //= require activestorage
 //= require turbolinks
 //= require jquery.js
+//= require jquery_ujs
 //= require main.js
+//= require admin/management_user.js
+//= require admin/demo/datatables-demo.js
+//= require admin/sb-admin-2.js
+//= require admin/sb-admin-2.min.js

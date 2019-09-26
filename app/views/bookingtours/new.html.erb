@@ -13,12 +13,13 @@
 
     <p><%= t ".tour" %><%= @tour.name %></p>
 
-    <p><%= t ".price" %><%= number_to_currency(@tour.price) %></p>
+    <%= label_tag :date %>
+    <%= date_select :startdate, "" %>
 
     <p><%= t ".startdate" %><%= l @tour.startdate, format: :default %> </p>
 
     <%= f.label t ".amountpeople" %>
-    <%= f.text_field :amountpeople, class: "form-control" %>
+    <%= f.number_field :amountpeople, max: @tour.amountpeople, class: "form-control" %>
 
     <%= f.submit t(".book"), class: "btn btn-primary", data: { confirm: t(".confirm") } %>
 

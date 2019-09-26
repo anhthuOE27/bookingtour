@@ -25,9 +25,9 @@
           </div>
 
           <div class="wrap-input100 validate-input"
-            data-validate=<%= t ".phonerequire" %>>
+            data-validate =<%= t ".emailrequire" %>>
             <span class="label-input100"><%= f.label t ".phone" %></span>
-            <%= f.text_field :phone, class: "form-control input100" %>
+            <%= f.text_field :phone, class: "form-control, input100" %>
             <span class="focus-input100"></span>
           </div>
 
@@ -47,7 +47,7 @@
 
           <div class="wrap-input100 validate-input"
             data-validate = <%= t ".passwordrequire" %>>
-            <span class="label-input100"><%= f.label t ".passwordcofir" %></span>
+            <span class="label-input100"><%= f.label t ".password_cofirmation" %></span>
             <%= f.password_field :password_confirmation, class: "form-control, input100" %>
             <span class="focus-input100"></span>
           </div>

@@ -1,12 +1,23 @@
-<% provide(:title, t(".title")) %>
-<div id="body">
-  <div>
-    <div class="featured">
-      <h1><%= t(".h1") %></h1>
-      <p>
-        <%= @review.content %>
-      </p>
-      <%= link_to image_tag("property_1.jpg") %>
+<div class="row">
+  <div class="introduction_tour">
+    <p>
+      <%= link_to @review.tour_name %>
+    </p>
+    <%= @review.content %>
+    <div class="image_tour">
+      <%= render partial: "shared/imagerelation", collection: @review.imagerelations %>
     </div>
-  <div>
+  </div>
+<div class="row">
+  <div class="comment_of_tour">
+    <div class="tilte_comment">
+      <p><%= t ".comment" %></p>
+    </div>
+    <%= form_for(:comment, url: review_comments_url(@review)) do |f| %>
+      <%= f.text_area :content, cols: 10, rows: 5,
+        placeholder: "#{t ".comment"}", class: "form-control, input100" %>
+      <button class="button_show"><%= t ".comment" %></button>
+    <% end %>
+    <%= render partial: "comments/comment", collection: @comments %>
+  </div>
 </div>

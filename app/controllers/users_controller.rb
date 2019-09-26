@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   layout :resolve_layout
 
-  before_action :logged_in_user, except: [:new, :create, :show]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :load_user, except: [:new, :create]
   before_action :correct_user, only: [:edit, :update]
+
+  def index; end
 
   def new
     @user = User.new

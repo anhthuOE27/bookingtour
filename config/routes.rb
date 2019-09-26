@@ -13,8 +13,12 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create] do
     resources :bookingtours, only: [:show, :destroy]
   end
-
   resources :reviews, only: [:show, :destroy]
+  get "/admin", to: "admin/admins#index"
+  resources :users, except: [:new, :create]
+  resources :reviews, only: [:index, :show, :destroy] do
+    resources :comments, only: :create
+  end
   resources :tours, only: [:index, :show] do
     resources :reviews, only: [:new, :show, :create]
     resources :bookingtours, only: [:create, :new]
@@ -22,5 +26,13 @@ Rails.application.routes.draw do
   end
   resources :comments, only: :create do
     resources :comments, only: :create
+  end
+  namespace :admin do
+    resources :users, only: [:index, :update, :destroy] do
+      collection do
+        get :search_user, to: "users#search"
+      end
+    end
+    resources :tours
   end
 end

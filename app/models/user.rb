@@ -1,12 +1,14 @@
 class User < ApplicationRecord
   attr_accessor :activation_token, :remember_token
 
-  has_many :booking_tours
-  has_many :rating_tours
-  has_many :comments
-  has_many :imagerelations, as: :imagetable
-  has_many :reactions
-  has_many :reviews
+  scope :search_user_by_name, ->(name){where("fullname like ?","%#{name}%")}
+  scope :sort_by_created_at, ->{order created_at: :desc}
+  has_many :booking_tours, dependent: :destroy
+  has_many :rating_tours, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :imagerelations, as: :imagetable, dependent: :destroy
+  has_many :reactions, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
   validates :fullname, presence: true, length: {
@@ -31,6 +33,10 @@ class User < ApplicationRecord
 
     def new_token
       SecureRandom.urlsafe_base64
+    end
+
+    def as_json user
+      user.attributes
     end
   end
 

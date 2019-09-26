@@ -1,0 +1,12 @@
+<tr class = "row_user">
+  <td><%= link_to tour.id, tour %></td>
+  <td><%= tour.name %></td>
+  <td><%= tour.price %></td>
+  <td><%= tour.place %></td>
+  <td><%= tour.food %></td>
+  <td>
+    <%= form_for(:tour, url: admin_tour_path(tour), method: :delete) do |f| %>
+      <%= f.submit "DELETE", :onclick => "alert('Input collected!')" %>
+    <% end %>
+  </td>
+</tr>

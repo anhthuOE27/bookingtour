@@ -3,6 +3,8 @@
     <img class="img-circle pull-left" src="https://public.slidesharecdn.com/images/user-48x48.png" alt="Mouse0270" />
     <h3><%= booking_tour.tour_name %></h3>
     <h5><span><%= time_ago_in_words(booking_tour.created_at) %></span></h5>
+    <h5><span>Start day: <%= booking_tour.tour_startdate %></span></h5>
+
   </div>
   <div class="panel-footer">
     <% if current_user? booking_tour.user %>

@@ -1,4 +1,25 @@
 <section class="listings">
+
+  <%= form_for(:category, url: tours_path, method: :get) do |f| %>
+    <select name="category[price_min]">
+      <option value="">Chọn giá nhấp nhất</option>
+      <%= render partial: "tours/price", collection: @prices %>
+    </select>
+
+    <select name="category[price_max]">
+      <option value="">Chọn giá cao nhất</option>
+      <%= render partial: "tours/price", collection: @prices %>
+    </select>
+
+    <select name="category[category_id]">
+      <option value="">Chọn danh mục</option>
+      <%= @categorts.each do |category|%>
+        <option value=<%= category.id %>><%= category.name %></option>
+      <% end %>
+    </select>
+    <p><%= f.submit "filter" %></p>
+  <% end %>
+
   <div class="wrapper">
     <%= will_paginate %>
       <%= render "shared/item_tours" %>

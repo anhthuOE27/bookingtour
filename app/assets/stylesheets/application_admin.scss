@@ -11,15 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
-//= require main.css
-//= require reset.css
-//= require responsive.css
-//= require stylereviews.css
-//= require main_signup.css
-//= require signup_util.css
-//= require custom.scss
-//= require profile.css
-//= require manaprofile.css
+//= require admin/now-ui-dashboard.min.css
+//= require admin/bootstrap.min.css
+//= require admin/tours.scss
  */
-@import 'bootstrap-sprockets';
-@import 'bootstrap';

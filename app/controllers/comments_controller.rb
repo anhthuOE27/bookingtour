@@ -3,7 +3,10 @@ class CommentsController < ApplicationController
 
   def create
     @tour = Tour.find_by id: params[:tour_id]
-    if params[:comment][:content].present? && @tour
+    @review = Review.find_by id: params[:review_id]
+    @commentable = @tour
+    @commentable ||= @review
+    if params[:comment][:content].present? && @tour || params[:comment][:content].present? && @review
       build_comment
     else
       flash[:danger] = "fail"
@@ -15,7 +18,7 @@ class CommentsController < ApplicationController
 
   def build_comment
     current_user.comments.create(content: params[:comment][:content],
-    parent_comment: params[:comment_id], commentable: @tour)
+      parent_comment: params[:comment_id], commentable: @commentable)
     redirect_to request.referrer || root_url
   end
 

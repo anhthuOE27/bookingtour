@@ -1,14 +1,12 @@
 <div class="panel panel-default panel-google-plus">
   <div class="panel-heading">
     <img class="img-circle pull-left" src="https://public.slidesharecdn.com/images/user-48x48.png" alt="Mouse0270" />
-    <h3><%= review.tour.name %></h3>
+    <h3><%= link_to "#{review.tour.name}", review %></h3>
     <h5><span><%= time_ago_in_words(review.created_at) %></span></h5>
   </div>
   <div class="panel-body">
     <p><%= review.content %></p>
-      <% review.imagerelations.each do|item| %>
-        <p><img src=<%=item.picture %> alt="Mouse0270" /></p>
-      <% end %>
+    <%= render partial: "shared/imagerelation", collection: review.imagerelations %>
   </div>
   <div class="panel-footer">
     <% if current_user? review.user %>
